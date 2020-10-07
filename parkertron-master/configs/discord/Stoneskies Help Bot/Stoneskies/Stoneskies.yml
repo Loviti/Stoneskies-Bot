@@ -1,0 +1,49 @@
+server_id: 662111689583362110
+config:
+  prefix: .
+  clear_commands: true
+channel_groups:
+- channels:
+  - 763393527841292300
+  - another-channel-id
+  mentions:
+    ping:
+      reaction:
+      - 👋
+      response:
+      - I see I was pinged.
+      - Please just post the issue you are having
+      - Or you can gather your logs and post them
+    mention:
+      reaction:
+      - 👋
+      response:
+      - ""
+  commands:
+  - command: hello
+    response:
+    - hey
+  keywords:
+  - keyword: hi
+    reaction:
+    - ""
+    response:
+    - Hi!
+  parsing:
+    image:
+      filetypes:
+      - png
+      - jpg
+      sites:
+      - name: pastebin
+        url: 'https://pastebin.com/'
+        format: 'https://pastebin.com/raw/&filename&'
+      - name: hastebin
+        url: 'https://hastebin.com/'
+        format: 'https://hastebin.com/raw/&filename&'
+permissions:
+- group: admin
+filters:
+- term: a bad word
+  reason:
+  - the message was removed because it had 'a bad word' in it
